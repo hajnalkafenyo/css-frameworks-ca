@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/css/index.css">
+    <title>Document</title>
+</head>
+
+<body class="d-flex flex-column row-gap-md-2">
+    <nav class="navbar navbar-expand-lg bg-info p-2 text-dark bg-opacity-25">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="../images/logo.png" alt="Book Social Logo" style="height: 24px; width: 24px">
+                <!-- Replace with your logo URL -->
+                <span>Book Social</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link link-primary active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-primary" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-primary" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-primary" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-primary" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container">
+
+        <div class="col-md-4 offset-md-4">
+            <div class="mt-2 card">
+                <div class="card-body">
+
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="postArea"></textarea>
+                        <label for="postArea">Comments</label>
+                    </div>
+                    <a href="#" class="my-3 bi bi-fingerprint btn btn-primary">Share</a>
+                </div>
+            </div>
+        </div>
+        <div class="offset-md-4 col-md-4 col-lg-4">
+            <select class="my-3 form-select form-select-sm" aria-label="Small select example">
+                <option value="latest">Latests posts</option>
+                <option value="activity">Latest activity</option>
+                <option value="intresting">Most intresting</option>
+            </select>
+        </div>
+        <form class="offset-md-4 col-4 d-flex">
+            <input class="bi bi-search form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <div class="my-3 col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
+            <div class="card my-3">
+                <h5 class="card-header fw-normal">Anne started reading a book</h5>
+                <div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-0"><img src="../images/jane_eyre.png"
+                                    alt="Poster of Jane Eyre" style="width:100%"></div>
+                            <div class="col-sm-12 col-md-8">
+                                <h5 class="card-title">Jane Eyre</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Charlotte Brontë</h6>
+                                <p class="card-text">The orphaned Jane Eyre has emerged a fiercely independent young
+                                    woman.
+                                    As
+                                    governess
+                                    at
+                                    Thornfield Hall, she's found her first real home—though it stands in the shadow of
+                                    the
+                                    estate's
+                                    master,
+                                    Mr. Rochester, and its haunted halls ring with maniacal laughter. For even the
+                                    grandest
+                                    houses
+                                    have
+                                    secrets.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bi bi-hand-thumbs-up-fill card-footer text-body-secondary">
+                        5 people like this post </div>
+                </div>
+            </div>
+        </div>
+        <div class="my-3 col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
+            <div class="card my-3">
+                <h5 class="card-header fw-normal">Jessica finished reading a book</h5>
+                <div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-0">
+                                <img src="../images/the_ice_people.png" alt="Poster of The Ice people"
+                                    style="width:100%">
+                            </div>
+                            <div class="col-sm-12 col-md-8">
+                                <h5 class="card-title">Legend of the Ice People</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Margit Sandemo</h6>
+                                <p class="card-text">Winter 1581: a deadly plague outbreak robs sixteen-year old peasant
+                                    girl Silje of all her family. Homeless, starving and shepherding two abandoned
+                                    children, she stumbles out of the corpse-strewn streets of Trondheim on Norway's
+                                    northern coast.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bi bi-hand-thumbs-up-fill card-footer text-body-secondary">
+                        3 people like this post </div>
+                </div>
+            </div>
+        </div>
+        <div class="my-3 col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
+            <div class="card my-3">
+                <h5 class="card-header fw-normal">Anne started reading a book</h5>
+                <div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-0">
+                                <img src="../images/victor_hugo.png" alt="Poster of The Hunchback of Notre-Dame"
+                                    style="width:100%">
+                            </div>
+                            <div class="col-sm-12 col-md-8">
+                                <h5 class="card-title">The Hunchback of Notre-Dame</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Victor Hugo</h6>
+                                <p class="card-text">This extraordinary historical novel, set in Medieval Paris under
+                                    the twin towers of its greatest structure and supreme symbol, the cathedral of
+                                    Notre-Dame, is the haunting drama of Quasimodo, the hunchback; Esmeralda, the gypsy
+                                    dancer; and Claude Frollo, the priest tortured by the specter of his own damnation.
+                                    Shaped by a profound sense of tragic irony.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bi bi-hand-thumbs-up-fill card-footer text-body-secondary">
+                        15 people like this post </div>
+                </div>
+            </div>
+        </div>
+        <div class="my-3 col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
+            <div class="card my-3">
+                <h5 class="card-header fw-normal">Beccy started reading a book</h5>
+                <div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-0">
+                                <img src="../images/the_gone_with.png" class="col-md-4"
+                                    alt="Poster of the Gone with the Wind" style="width:100%">
+                            </div>
+                            <div class="col-sm-12 col-md-8">
+                                <h5 class="card-title">The Gone with the Wind</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Margaret Mitchell</h6>
+                                <p class="card-text">Margaret Mitchell's epic novel of love and war won the Pulitzer
+                                    Prize and went on to give rise to two authorized sequels and one of the most popular
+                                    and celebrated movies of all time. Many novels have been written about the Civil War
+                                    and its aftermath. None take us into the burning fields and cities of the American
+                                    South as „Gone With the Wind” does.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bi bi-hand-thumbs-up-fill card-footer text-body-secondary">
+                        7 people like this post </div>
+                </div>
+            </div>
+        </div>
+        <div class="my-3 col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
+            <div class="card my-3">
+                <h5 class="card-header fw-normal">Judy finished reading a book</h5>
+                <div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-0">
+                                <img src="../images/tuscan_sun.png" alt="Poster of Under the Tuscan Sun"
+                                    style="width:100%">
+                            </div>
+                            <div class="col-sm-12 col-md-8">
+                                <h5 class="card-title">Under the Tuscan Sun</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Frances Mayes</h6>
+                                <p class="card-text">Frances Mayes entered a wondrous new world when she began restoring
+                                    an abandoned villa in the spectacular Tuscan countryside. There were unexpected
+                                    treasures at every turn: faded frescos beneath the whitewash in her dining room, a
+                                    vineyard under wildly overgrown brambles in the garden, and, in the nearby hill
+                                    towns, vibrant markets and delightful people.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bi bi-hand-thumbs-up-fill card-footer text-body-secondary">
+                        5 people like this post </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
