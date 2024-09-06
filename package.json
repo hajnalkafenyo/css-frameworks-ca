@@ -4,7 +4,7 @@
   "description": "A starting point for the CSS Frameworks CA project",
   "scripts": {
     "test": "echo \"We will learn more about testing in the Workflow course\" && exit 1",
-    "build": "sass src/scss:dist/css",
+    "build": "node ./copy.js && sass src/scss:dist/css",
     "watch-css": "sass --watch src/scss:dist/css",
     "dev": "npm-run-all --parallel watch-css start",
     "start": "live-server"
