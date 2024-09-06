@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../dist/css/index.css">
+    <link rel="stylesheet" href="dist/css/index.css">
     <title>Document</title>
 </head>
 
@@ -21,15 +21,15 @@
                 <form action="/profile">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                            placeholder="sample@example.com">
+                        <input required="required" type="email" class="form-control" id="email"
+                            aria-describedby="emailHelp" placeholder="sample@example.com">
                         <div id="emailHelp" class="form-text">Please write a valid email address.</div>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
                         <div class="input-group">
-                            <input type="password" pattern=".{8,}" class="form-control" id="password"
-                                aria-describedby="password-icon" placeholder="Password">
+                            <input required="required" type="password" pattern=".{8,}" class="form-control"
+                                id="password" aria-describedby="password-icon" placeholder="Password">
                             <span class=" input-group-text" id="password-icon">
                                 <button type="button" class="btn btn-sm bi bi-eye-slash"></button>
                             </span>
