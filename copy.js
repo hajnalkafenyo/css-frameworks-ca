@@ -8,6 +8,10 @@ const files = [
     {
         from: "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2",
         to: "dist/css/fonts/bootstrap-icons.woff2"
+    },
+    {
+        from: "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+        to: "dist/js/bootstrap.bundle.min.js"
     }
 ];
 
