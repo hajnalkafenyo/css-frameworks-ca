@@ -42,15 +42,11 @@
         </nav>
     </div>
     <div class="text-bg-light p-3 m-auto">
-        <div class="container">
+        <div id="profile-content" class="container">
             <img class="img object-fit-cover w-100" src="../images/home_small.jpg" alt="A girl reading a book" />
             <div class="profile-header-content">
                 <img class="img-thumbnail object-fit-cover rounded-circle" src="../images/Ellipse 1.png"
                     alt="A cat reading a book" />
-                <div>
-                    <h1>Anne Smith</h1>
-                    <h6 class="text-secondary">#anne.sm</h6>
-                </div>
                 <div><button class="bi bi-person-plus-fill btn btn-primary" type="submit">Follow</button></div>
                 <!--<button class="bi bi-person-dash-fill btn btn-outline-secondary" type="submit">Unfollow</button>-->
                 <div><button type="button" class="btn btn-link" data-bs-toggle="modal"
@@ -260,132 +256,48 @@
         </div>
     </div>
     </div>
-    <div class="my-3 col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
-        <div class="card">
-            <div class="card-body">
-                <h6 class="card-subtitle mb-2 text-body-secondary">Bio</h6>
-                <p class="card-text">My name is Anne and I like to read. I like crime books and my favourite author is
-                    Agatha Christie, but I like other type books also. I have two cats Miss Marple and Poirot and I find
-                    out
-                    funny storis of them and I write these in my notebook. Maybe I will publish them one day.</p>
-            </div>
-        </div>
-    </div>
-    <div class="my-3 col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
-        <div class="card my-3">
-            <h5 class="card-header fw-normal">Anne started reading a book</h5>
-            <div>
+    <main class="container">
+        <div class="my-3 col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
+            <div class="card">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-0">
-                            <img class="w-100" src="../images/jane_eyre.png" alt="Poster of Jane Eyre">
-                        </div>
-                        <div class="col-sm-12 col-md-8 mt-2 mt-sm-0">
-                            <h5 class="card-title">Jane Eyre</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Charlotte Brontë</h6>
-                            <p class="card-text">The orphaned Jane Eyre has emerged a fiercely independent young
-                                woman.
-                                As
-                                governess
-                                at
-                                Thornfield Hall, she's found her first real home—though it stands in the shadow of
-                                the
-                                estate's
-                                master,
-                                Mr. Rochester, and its haunted halls ring with maniacal laughter. For even the
-                                grandest
-                                houses
-                                have
-                                secrets.</p>
-                        </div>
-                    </div>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Bio</h6>
+                    <p class="card-text" id="bio"></p>
                 </div>
-                <div class="bi bi-hand-thumbs-up-fill card-footer text-body-secondary">
-                    5 people like this post </div>
             </div>
         </div>
-    </div>
-    <div class="my-3 col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
-        <div class="card my-3">
-            <h5 class="card-header fw-normal">Anna finished reading a book</h5>
-            <div>
+        <div class="col-md-4 offset-md-4">
+            <div class="mt-2 card">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-0">
-                            <img class="w-100" src="../images/ag_the_misterious.png"
-                                alt="Poster of The Mysterious Affair at Styles">
+                    <form id="postArea">
+                        <div class="form-floating">
+                            <div class="mb-1">
+                                <label for="PostTitle" class="form-label">Tittel</label>
+                                <input class="form-control" id="PostTitle" placeholder="Leave a comment here"></input>
+                            </div>
+                            <div class="">
+                                <label for="postBody" class="form-label">Posts</label>
+                                <textarea class="form-control" id="postBody"
+                                    placeholder="Leave a comment here"></textarea>
+                            </div>
+                            <div class="mb-1">
+                                <label for="PostFile" class="form-label">File</label>
+                                <input class="form-control" type="url" id="PostFile"
+                                    placeholder="Leave a picture here"></input>
+                            </div>
                         </div>
-                        <div class="col-sm-12 col-md-8 mt-2 mt-sm-0">
-                            <h5 class="card-title">The Mysterious Affair at Styles</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Agatha Christie</h6>
-                            <p class="card-text">Invalided home from the First World War, Lieutenant Hastings finds
-                                himself in a convalescent home very much to his disliking. Thankfully his old friend
-                                John Cavendish invites him to spend the rest of his sick leave at his family home. The
-                                beautiful Styles Court is home to John's step mother Mrs Inglethorpe, and her new
-                                husband Alfred. Despite the tranquil surroundings Hastings begins to realise that all is
-                                not right.
-                            </p>
-                        </div>
-                    </div>
                 </div>
-                <div class="bi bi-hand-thumbs-up-fill card-footer text-body-secondary">
-                    3 people like this post </div>
+                <button type="submit" class="my-3 bi bi-share-fill btn btn-primary">Share</button>
+                </form>
             </div>
         </div>
-    </div>
-    <div class="my-3 col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
-        <div class="card my-3">
-            <h5 class="card-header fw-normal">Anna finished reading a book</h5>
-            <div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-0">
-                            <img class="w-100" src="../images/ag_the_murder_links.png"
-                                alt="Poster of The Murder on the Links">
-                        </div>
-                        <div class="col-sm-12 col-md-8 mt-2 mt-sm-0">
-                            <h5 class="card-title">The Murder on the Links</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Agatha Christie</h6>
-                            <p class="card-text">A crime novel featuring Belgian detective Hercule Poirot, who travels
-                                to France following an urgent plea for help from a client, but he arrives late and the
-                                client is found dead. Before Poirot can begin to assess the clues, a second corpse is
-                                found, murdered in the same way as his client.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bi bi-hand-thumbs-up-fill card-footer text-body-secondary">
-                    15 people like this post </div>
-            </div>
         </div>
-    </div>
-    <div class="my-3 col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
-        <div class="card my-3">
-            <h5 class="card-header fw-normal">Anna wrote a review of a book</h5>
-            <div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-0">
-                            <img class="w-100" src="../images/ag_the_murder_links.png"
-                                alt="Poster of The Murder on the Links">
-                        </div>
-                        <div class="col-sm-12 col-md-8 mt-2 mt-sm-0">
-                            <h5 class="card-title">The Murder on the Links</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Agatha Christie</h6>
-                            <p class="card-text">The Murder on the Links by Agatha Christie is a classic detective novel
-                                featuring the brilliant Hercule Poirot. The plot is intricately woven, with unexpected
-                                twists and a cleverly concealed culprit, keeping readers engaged until the final reveal.
-                                Christie's skill in crafting complex characters and suspenseful scenes shines throughout
-                                the book. It's a must-read for fans of traditional whodunits and those who enjoy a
-                                satisfying, intellectually...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bi bi-hand-thumbs-up-fill card-footer text-body-secondary">
-                    7 people like this post </div>
-            </div>
-        </div>
-    </div>
+        <div id="post-container">
+            <script src="../postcard.js"></script>
+            <script src="index.js"></script>
+            <script src="posts.js"></script>
 
+        </div>
+    </main>
 </body>
 
 </html>

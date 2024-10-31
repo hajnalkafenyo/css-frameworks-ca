@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/css/index.css">
+    <script src="../dist/js/bootstrap.bundle.min.js"></script>
+    <title>Book Social | Registrer</title>
+</head>
+
+<body class="d-flex flex-column row-gap-md-2">
+    <main class="d-flex justify-content-center align-items-center min-vh-100 bg-secondary bg-opacity-25">
+        <div class="col-md-4 rounded shadow bg-white bg-opacity-20 p-3">
+            <div class="col-md-4 offset-md-4">
+                <div class="ratio ratio-1x1">
+                    <img class="img-thumbnail object-fit-cover rounded-circle w-100" src="../images/home_small.jpg"
+                        alt="A girl reading a book" />
+                </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-center">
+                <form id="emailForm" action="/profile">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input required="required" type="text" class="form-control" id="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input required="required" type="email" class="form-control" id="email"
+                            aria-describedby="emailHelp" placeholder="sample@noroff.no">
+                        <span id="email-error" class="text-danger"></span>
+                        <div id="emailHelp" class="form-text">Please write a valid email address.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="input-group">
+                            <input required="required" type="password" pattern=".{8,}" class="form-control"
+                                id="password" aria-describedby="password-icon" placeholder="Password">
+                            <span class=" input-group-text" id="password-icon">
+                                <button type="button" class="btn btn-sm bi bi-eye-slash"></button>
+                            </span>
+                        </div>
+                        <div class="form-text" id="password-help-text" placeholder="Password">Minimum 8 characters.
+                        </div>
+                        <div class="mb-3">
+                            <label for="password2" class="form-label">Password again</label>
+                            <div class="input-group">
+                                <input required="required" type="password" pattern=".{8,}" class="form-control"
+                                    id="password2" aria-describedby="password-icon" placeholder="Password">
+                                <span class=" input-group-text" id="password-icon">
+                                    <button type="button" class="btn btn-sm bi bi-eye-slash"></button>
+                                </span>
+                            </div>
+                            <div class="form-text" id="password2-help-text" placeholder="Password">Same password.
+                            </div>
+                            <div class="mb-4">
+                                <label for="bio" pattern=".{8,}" class="form-label">Bio</label>
+                                <textarea required="required" id="bio" class="form-control"></textarea>
+                                <div class="form-text" placeholder="Password">Please write some words about you.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hide" id="error-message"></div>
+                        <button class="btn btn-primary" type="submit">Register now</button>
+                        <button class="bi bi-person-fill btn btn-secondary" id="logIn" type="submit">Log in</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+
+</html>
