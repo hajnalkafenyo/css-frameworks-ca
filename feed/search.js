@@ -1,8 +1,6 @@
-console.log('itt vagyok');
-
-document.getElementById("searchField").addEventListener("submit", function (event) {
+document.getElementById("searchField").addEventListener("submit", async function (event) {
     event.preventDefault();
     const search = document.getElementById('search').value;
-    console.log(search);
-}
-);
+    const posts = await searchPost(search)
+    displayPosts(posts.data)
+});

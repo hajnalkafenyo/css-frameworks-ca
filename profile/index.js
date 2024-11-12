@@ -1,4 +1,4 @@
-async function getProfile() {
+/*async function getProfile() {
     try {
         const userStr = localStorage.getItem("user");
         const user = JSON.parse(userStr)
@@ -26,19 +26,19 @@ async function getProfile() {
             bannerAlt: data.data.banner.alt,
             avatar: data.data.avatar.url,
             avatarAlt: data.data.avatar.alt,
-        }
-        const profileHtml = profilContent(profile);
-        const profileContentElement = document.getElementById('profile-content');
-        profileContentElement.innerHTML = profileHtml;
-        const bioElement = document.getElementById('bio');
-        bioElement.innerHTML = profile.bio;
+        }*/
+async function fetchProfile() {
+    const userStr = localStorage.getItem("user");
+    const user = JSON.parse(userStr)
+    const profile = await getProfile(user.name)
+    const profileHtml = profilContent(profile);
+    const profileContentElement = document.getElementById('profile-content');
+    profileContentElement.innerHTML = profileHtml;
+    const bioElement = document.getElementById('bio');
+    bioElement.innerHTML = profile.bio;
 
-
-    } catch (error) {
-        console.error('Network error:', error);
-    }
 }
-getProfile();
+fetchProfile();
 function profilContent(user) {
     return `
     <div class="text-bg-light p-3 m-auto">

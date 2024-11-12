@@ -44,10 +44,15 @@
     <div class="col-md-4 offset-md-4">
         <div class="mt-2 card">
             <div class="card-body bg-light">
-                <form id="searchField" class="d-flex">
+                <form id="searchField" class="d-flex mb-2">
                     <input class="bi bi-search form-control me-2" id="search" type="search" placeholder="Search"
                         aria-label="Search">
                     <button class="btn btn-outline-success" id="searchButton" type="submit">Search</button>
+                </form>
+                <form id="filterField" class="d-flex">
+                    <input class="bi bi-search form-control me-2" id="filter" type="search" placeholder="Filter by tag"
+                        aria-label="filter">
+                    <button class="btn btn-outline-success" id="filterButton" type="submit">Filter</button>
                 </form>
             </div>
         </div>
@@ -79,19 +84,15 @@
                 </div>
             </div>
         </div>
-        <div class="offset-md-4 col-md-4 col-lg-4">
-            <select class="my-3 form-select form-select-sm" aria-label="Small select example">
-                <option value="latest">Latests posts</option>
-                <option value="activity">Latest activity</option>
-                <option value="intresting">Most intresting</option>
-            </select>
-        </div>
+
         <div id="post-container">
 
     </main>
+    <script src="../api.js"></script>
     <script src="../postcard.js"></script>
     <script src="index.js"></script>
     <script src="search.js"></script>
+    <script src="filter.js"></script>
 </body>
 
 </html>

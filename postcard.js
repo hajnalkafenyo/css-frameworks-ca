@@ -46,61 +46,34 @@ function dateDifference(value) {
     }
 }
 
-/*
-const postContainerElement = document.getElementById('post-container');
-document.getElementById('post-container').style.display = 'block';
 
-const body = await response.json();
-let s = "";
-for (let i = 0; i < body.data.length; i++) {
-    const postData = {
-        title: body.data[i].title,
-        body: body.data[i].body,
-        date: dateDifference(new Date(body.data[i].created)),
-        media: body.data[i].media
-
-
-    }
-    const postCardData = postCard(postData);
-    postContainerElement.innerHTML += postCardData;
+async function fetchPosts() {
+    const body = await getPosts()
+    displayPosts(body.data)
 }
-*/
 
 
-async function fetchPosts(apiUrl) {
-    const isThereUser = !!localStorage.getItem("user")
-    if (!isThereUser) {
-        window.location.href = "../index.html"
-        return
-    }
-    const userStr = localStorage.getItem("user");
-    const user = JSON.parse(userStr)
-
-    const response = await fetch(apiUrl, {
-        method: 'GET',
-        headers: {
-            "content-type": "application/json",
-            "X-Noroff-API-Key": "c3f5b8a6-3a13-441f-bf49-53bf03f73477",
-            "Authorization": `Bearer ${user.accessToken}`
-        },
-    });
-    if (response.status >= 400) {
-        localStorage.removeItem("user")
-        window.location.href = "/index.html"
-        return
-    }
-
-    const body = await response.json()
+async function displayPosts(posts) {
     let s = "";
-    for (let i = 0; i < body.data.length; i++) {
-        const element = body.data[i];
+    for (let i = 0; i < posts.length; i++) {
+        const element = posts[i];
         const postCardData = postCard(element);
         s += postCardData
     }
+
     document.getElementById('post-container').innerHTML = s;
     document.getElementById('post-container').style.display = 'block';
-}
+    const remove = document.getElementsByClassName('delete');
+    for (let i = 0; i < remove.length; i++) {
+        const element = remove[i];
+        element.addEventListener('click', async function (event) {
+            event.preventDefault();
+            await removePost(element.dataset.postid);
+            await fetchProfilesPosts();
+        });
+    }
 
+}
 
 function postCard(postData) {
     const date = dateDifference(postData.created);
@@ -116,6 +89,7 @@ function postCard(postData) {
                             <div class="d-flex flex-column col-sm-12 col-md-8 mt-2 mt-sm-0">
                                 <h5 class="card-title">${postData.title || ""}</h5>
                                 <p class="card-text">${postData.body || ""}</p>
+                                <p>${postData.id}</p>
                                 <div class="d-flex align-items-end flex-grow-1 text-body-secondary"><small>${date}</small></div>
                             </div>
                         </div>
@@ -123,9 +97,12 @@ function postCard(postData) {
                     <div class="card-footer text-body-secondary">
                         <span class="bi bi-hand-thumbs-up-fill">${postData._count.reactions}</span>
                         <span class="bi bi-chat-fill">${postData._count.comments}</span>
-                        </div>
+                        <button class="btn btn-info">Edit</button>
+                        <button class="delete btn btn-danger" data-postid="${postData.id}">Delete</button>
                 </div>
             </div>
         </div>
+    </div>
     `
-} 
+}
+
