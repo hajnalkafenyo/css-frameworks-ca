@@ -73,15 +73,27 @@ async function displayPosts(posts) {
         });
     }
 
+    const editButtons = document.querySelectorAll(".edit-button");
+    const form = document.querySelector("form");
+
+    editButtons.forEach(editButton => editButton.addEventListener("click", (e) => {
+        //form.classList.toggle("hidden");
+        const postId = e.target.dataset.postid;
+
+        const card = document.querySelector(`.card[data-postid="${postId}"]`);
+        card.querySelector(".card-content").classList.toggle("hide");
+        card.querySelector(".card-form").classList.toggle("hide");
+        console.log(card)
+    }));
 }
 
 function postCard(postData) {
     const date = dateDifference(postData.created);
     return `
     <div class="my-3 col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
-            <div class="card my-3">
+            <div class="card my-3" data-postid="${postData.id}">
                 <div>
-                    <div class="card-body">
+                    <div class="card-body card-content">
                         <div class="row">
                             <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-0">
                                 <img class="w-100" src="${postData.media?.url || ""}" alt="${postData.media?.alt || ""}">
@@ -94,10 +106,32 @@ function postCard(postData) {
                             </div>
                         </div>
                     </div>
+                    <div class="card-body card-form hide">
+                    <form>
+                        <div class="form-floating">
+                            <div class="mb-1">
+                                <label for="PostTitle" class="form-label">Tittel</label>
+                                <input value="${postData.title || ""}" class="form-control" id="PostTitle" placeholder="Leave a comment here"></input>
+                            </div>
+                            <div class="">
+                                <label for="postBody" class="form-label">Posts</label>
+                                <textarea class="form-control" id="postBody"
+                                    placeholder="Leave a comment here">${postData.body || ""}</textarea>
+                            </div>
+                            <div class="mb-1">
+                                <label for="PostFile" class="form-label">File</label>
+                                <input value="${postData.media?.url || ""}" class="form-control" type="url" id="PostFile"
+                                    placeholder="Leave a picture here">
+                            </div>
+                        </div>
+                <button class="btn btn-primary" type="submit">Save</button>
+                    <button class="btn btn-outline-primary edit-button" data-postid="1234" type="button">Cancel</button>
+                </form>
+            </div>
                     <div class="card-footer text-body-secondary">
                         <span class="bi bi-hand-thumbs-up-fill">${postData._count.reactions}</span>
                         <span class="bi bi-chat-fill">${postData._count.comments}</span>
-                        <button class="btn btn-info">Edit</button>
+                        <button class="btn btn-info edit-button" data-postid="${postData.id}">Edit</button>
                         <button class="delete btn btn-danger" data-postid="${postData.id}">Delete</button>
                 </div>
             </div>
