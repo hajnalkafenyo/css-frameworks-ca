@@ -10,9 +10,9 @@ async function callApi(url, method, body = undefined) {
 
     const baseUrl = "https://v2.api.noroff.dev";
     const response = await fetch(baseUrl + url, {
-        method: method,  // Specify that we are making a POST request
+        method: method,
         headers: {
-            'Content-Type': 'application/json', // Tell the server we're sending JSON
+            'Content-Type': 'application/json',
             "X-Noroff-API-Key": "c3f5b8a6-3a13-441f-bf49-53bf03f73477",
             "Authorization": `Bearer ${user.accessToken}`
 
@@ -29,7 +29,7 @@ async function callApi(url, method, body = undefined) {
 }
 
 
-async function createPost(title, body, image) {
+async function postPost(title, body, image) {
 
     const postData = {
         title: title,
@@ -44,17 +44,16 @@ async function createPost(title, body, image) {
 }
 
 async function getPosts() {
-    return callApi("/social/posts", "GET")
+    return callApi("/social/posts?_author=true&_reactions=true", "GET")
 }
 
-async function getProfilesPosts() {
-    const userStr = localStorage.getItem("user");
-    const user = JSON.parse(userStr)
-    return callApi(`/social/profiles/${user.name}/posts`, "GET")
+async function getProfilesPosts(userName) {
+
+    return callApi(`/social/profiles/${userName}/posts?_author=true&_reactions=true`, "GET")
 }
 
 async function getProfile(profileId) {
-    const data = await callApi(`/social/profiles/${profileId}`, "GET")
+    const data = await callApi(`/social/profiles/${profileId}?_following=true&_followers=true`, "GET")
     const profile = {
         name: data.data.name,
         email: data.data.email,
@@ -63,6 +62,10 @@ async function getProfile(profileId) {
         bannerAlt: data.data.banner.alt,
         avatar: data.data.avatar.url,
         avatarAlt: data.data.avatar.alt,
+        followers: data.data.followers,
+        following: data.data.following,
+        countOfFollowers: data.data._count.followers,
+        countOfFollowing: data.data._count.following
     }
     return profile;
 }
@@ -76,6 +79,40 @@ async function filterPost(filter) {
 }
 
 async function removePost(id) {
-
     return callApi(`/social/posts/${id}`, "DELETE")
+}
+
+async function editedPost(postId, updatedData) {
+    return callApi(`/social/posts/${postId}`, "PUT", updatedData)
+}
+
+async function getPost(postId) {
+    return callApi(`/social/posts/${postId}?_author=true&_comments=true&_reactions=true`, "GET")
+}
+
+async function postComment(body, postId) {
+    const commentData = {
+        body: body,
+    }
+    return callApi(`/social/posts/${postId}/comment`, "POST", commentData)
+}
+
+async function removeComment(id, commentId) {
+    return callApi(`/social/posts/${id}/comment/${commentId}`, "DELETE")
+}
+
+async function updateProfile(profileId, updatedData) {
+    return callApi(`/social/profiles/${profileId}`, "PUT", updatedData)
+}
+
+async function followProfile(profileId) {
+    return callApi(`/social/profiles/${profileId}/follow`, "PUT")
+}
+
+async function unfollowProfile(profileId) {
+    return callApi(`/social/profiles/${profileId}/unfollow`, "PUT")
+}
+
+async function createReaction(postId, symbol) {
+    return callApi(`/social/posts/${postId}/react/${symbol}`, "PUT")
 }

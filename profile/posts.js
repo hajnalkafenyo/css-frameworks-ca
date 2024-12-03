@@ -1,6 +1,7 @@
 
 async function fetchProfilesPosts() {
-    const body = await getProfilesPosts()
-    displayPosts(body.data)
+    const profileName = getProfileName()
+    const body = await getProfilesPosts(profileName)
+    displayPosts(body.data, true)
 }
 fetchProfilesPosts();

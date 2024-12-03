@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/css/index.css">
+    <script src="../dist/js/bootstrap.bundle.min.js"></script>
+    <title>Book Social | Post</title>
+</head>
+
+<body class="d-flex flex-column row-gap-md-2">
+    <nav class="navbar navbar-expand-lg bg-info p-2 text-dark bg-opacity-25">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <img src="../images/logo.png" alt="Book Social Logo" style="height: 24px; width: 24px">
+                <!-- Replace with your logo URL -->
+                <span>Book Social</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link link-primary " href="/feed">Feed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-primary" href="/profile">My Profile</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Post</li>
+            </ol>
+        </nav>
+    </div>
+    <div id="post-container"></div>
+    <div id="comment-container"></div>
+    <form id="commentArea">
+        <div class="form-floating card my-3 col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
+            <textarea class="form-control" placeholder="Leave a comment here" id="commentBody"></textarea>
+            <label for="commentBody">Comments</label>
+            <button type="submit" class="my-3 btn btn-primary">Share</button>
+        </div>
+    </form>
+
+    </main>
+    <script src="../postcard.js"></script>
+    <script src="../api.js"></script>
+    <script src="./post.js"></script>
+</body>
+
+</html>
