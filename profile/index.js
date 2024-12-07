@@ -58,7 +58,7 @@ async function fetchProfile() {
             bio: bio,
         }
         updateProfile(userName, updatedData);
-
+        window.location.reload();
 
     })
     editProfileButtons.forEach(editProfileButton => editProfileButton.addEventListener("click", (e) => {
@@ -145,7 +145,7 @@ function followerItem(follower) {
 
 function followersModal(user) {
     return `
-        <div class="modal" id = "followerModal" tabindex = "-1">
+        <div class="modal" id="followerModal" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -181,7 +181,7 @@ function followingItem(following) {
 
 function followingModal(user) {
     return `
-        <div class="modal" id = "followingModal" tabindex = "-1">
+        <div class="modal" id="followingModal" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
