@@ -53,7 +53,8 @@ document.getElementById("emailForm").addEventListener("submit", async function (
             body: JSON.stringify(requestData)
         });
         if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            const data = await response.json();
+            throw new Error(`Failed to register profile: ${data.errors.map((e) => e.message).join(", ")}`);
         }
 
         const data = await response.json();
