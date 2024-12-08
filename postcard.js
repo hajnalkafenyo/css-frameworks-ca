@@ -149,8 +149,11 @@ function postCard(postData, shouldShowViewLink) {
                 </div>
                 <div class="card-footer text-body-secondary">
                     <div>${postData.reactions?.map((r) => `<button class="btn btn-outline-info btn-sm m-1">${r.symbol}<span class="badge text-bg-secondary">${r.count}</span></button>`).join("")}</div>
-                    <button onclick="createReactionModal(${postData.id}, defaultReactionList)">React</button>
-                    <span class="bi bi-chat-fill">${postData._count.comments}</span>
+                    <button class="btn btn-outline-primary btn-sm" onclick="createReactionModal(${postData.id}, defaultReactionList)">👍</button>
+                    <span>
+                        <span class="bi bi-chat-fill"></span>
+                        ${postData._count.comments}
+                    </span>
                     <div class="btn-group ${isUserPostAuthor ? "" : "hide"}">
                         <button class="btn btn-primary edit-button" data-postid="${postData.id}">Edit</button>
                         <button class="delete btn btn-outline-primary" data-postid="${postData.id}">Delete</button>
