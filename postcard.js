@@ -166,9 +166,8 @@ function postCard(postData, shouldShowViewLink) {
     `
 }
 
-
 const defaultReactionList = ["❤️", "😂", "😮", "😢", "😡",
-    "👍", "👎", "🎉", "😎", "💔", "🔥", "👏", "💯"]
+    "👍", "👎", "🎉", "😎", "💔", "🔥", "👏", "💯", "🌸", "💩"]
 
 function createReactionModal(postId, reactions) {
     document.getElementById('myModal')?.remove();

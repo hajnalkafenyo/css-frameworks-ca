@@ -9,14 +9,16 @@ async function callApi(url, method, body = undefined) {
     const user = JSON.parse(userStr)
 
     const baseUrl = "https://v2.api.noroff.dev";
+    const headers = {
+        "X-Noroff-API-Key": "c3f5b8a6-3a13-441f-bf49-53bf03f73477",
+        "Authorization": `Bearer ${user.accessToken}`
+    };
+    if (body) {
+        headers['Content-Type'] = 'application/json'
+    }
     const response = await fetch(baseUrl + url, {
         method: method,
-        headers: {
-            'Content-Type': 'application/json',
-            "X-Noroff-API-Key": "c3f5b8a6-3a13-441f-bf49-53bf03f73477",
-            "Authorization": `Bearer ${user.accessToken}`
-
-        },
+        headers: headers,
         body: JSON.stringify(body)
     });
     if (response.status === 204) { return }
