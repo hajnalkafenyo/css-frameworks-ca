@@ -1,50 +1,11 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
-
-@font-face {
-  font-display: block;
-  font-family: "bootstrap-icons";
-  src: url("fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6") format("woff2"),
-    url("fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6") format("woff");
-}
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
 
 @import "../../node_modules/bootstrap-icons/font/bootstrap-icons";
 @import "./variable";
 
+@import "./custom";
 
-
-@include media-breakpoint-up(xs) {
-  .profile-header-content {
-    margin: -35px 0 35px 0px;
-
-    &>.img-thumbnail {
-      width: 75px;
-      height: 75px;
-      margin-left: 25px;
-    }
-  }
-}
-
-@include media-breakpoint-up(sm) {
-  .profile-header-content {
-    margin: -100px 0 100px 0px;
-
-    &>.img-thumbnail {
-      width: 100px;
-      height: 100px;
-      margin-left: 50px;
-    }
-  }
-}
-
-@include media-breakpoint-up(md) {
-  .profile-header-content {
-    margin: -200px 0 150px 0px;
-
-    &>.img-thumbnail {
-      width: 300px;
-      height: 300px;
-      margin-left: 75px;
-    }
-  }
-}
 

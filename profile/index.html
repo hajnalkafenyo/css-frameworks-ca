@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="../dist/css/index.css">
     <script src="../dist/js/bootstrap.bundle.min.js"></script>
     <title>Book Social | Profile</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body class="d-flex flex-column row-gap-md-2">
@@ -14,7 +18,6 @@
         <div class="container-fluid">
             <a class="navbar-brand d-flex align-items-center" href="/">
                 <img src="../images/logo.png" alt="Book Social Logo" style="height: 24px; width: 24px">
-                <!-- Replace with your logo URL -->
                 <span>Book Social</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -22,12 +25,15 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="nav ms-auto nav-underline">
                     <li class="nav-item">
-                        <a class="nav-link link-primary " href="/feed">Feed</a>
+                        <a class="nav-link " href="/feed">Feed</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link-primary" href="/profile">My Profile</a>
+                        <a class="nav-link active" href="/profile">My Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="logOut" href="#">Log out</a>
                     </li>
                 </ul>
             </div>
@@ -36,356 +42,56 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/feed">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Profile</li>
             </ol>
         </nav>
     </div>
     <div class="text-bg-light p-3 m-auto">
-        <div class="container">
-            <img class="img object-fit-cover w-100" src="../images/home_small.jpg" alt="A girl reading a book" />
-            <div class="profile-header-content">
-                <img class="img-thumbnail object-fit-cover rounded-circle" src="../images/Ellipse 1.png"
-                    alt="A cat reading a book" />
-                <div>
-                    <h1>Anne Smith</h1>
-                    <h6 class="text-secondary">#anne.sm</h6>
-                </div>
-                <div><button class="bi bi-person-plus-fill btn btn-primary" type="submit">Follow</button></div>
-                <!--<button class="bi bi-person-dash-fill btn btn-outline-secondary" type="submit">Unfollow</button>-->
-                <div><button type="button" class="btn btn-link" data-bs-toggle="modal"
-                        data-bs-target="#followingModal">9
-                        following</button>
-                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#followerModal">5
-                        followers</button>
-                </div>
-                <div class="modal" id="followerModal" tabindex="-1">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Followers</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <ul class="list-group">
-                                    <li class="list-group-item">
-                                        <div class="row">
-                                            <div class="col-2">
-                                                <img class="img-thumbnail object-fit-cover rounded-circle"
-                                                    src="../images/avataaars.png" alt="Jessica White" />
-                                            </div>
-                                            <div class="col-10">
-                                                <h6>Jessica White</h6>
-                                                <h6 class="text-secondary">#jess.wh</h6>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <div class="row">
-                                            <div class="col-2">
-                                                <img class="img-thumbnail object-fit-cover rounded-circle"
-                                                    src="../images/beccy.png" alt="Rebecca Horse" />
-                                            </div>
-                                            <div class="col-10">
-                                                <h6>Rebecca Horse</h6>
-                                                <h6 class="text-secondary">#beccy18</h6>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <div class="row">
-                                            <div class="col-2">
-                                                <img class="img-thumbnail object-fit-cover rounded-circle"
-                                                    src="../images/profilepic.jpg" alt="Judy Evens" />
-                                            </div>
-                                            <div class="col-10">
-                                                <h6>Judy Evens</h6>
-                                                <h6 class="text-secondary">#jud.eve</h6>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <div class="row">
-                                            <div class="col-2">
-                                                <img class="img-thumbnail object-fit-cover rounded-circle"
-                                                    src="../images/download.jpg" alt="Mary Black" />
-                                            </div>
-                                            <div class="col-10">
-                                                <h6>Mary Black</h6>
-                                                <h6 class="text-secondary">#blacky</h6>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <div class="row">
-                                            <div class="col-2">
-                                                <img class="img-thumbnail object-fit-cover rounded-circle"
-                                                    src="../images/scarly.jpg" alt="Scarlett Johanson" />
-                                            </div>
-                                            <div class="col-10">
-                                                <h6>Scarlett Johanson</h6>
-                                                <h6 class="text-secondary">#scarly</h6>
-                                            </div>
-                                        </div>
-                            </div>
-                            </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal" id="followingModal" tabindex="-1">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Following</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <ul class="list-group">
-                                <li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col-2">
-                                            <img class="img-thumbnail object-fit-cover rounded-circle"
-                                                src="../images/profilepic.jpg" alt="Judy Evens" />
-                                        </div>
-                                        <div class="col-10">
-                                            <h6>Judy Evens</h6>
-                                            <h6 class="text-secondary">#jud.eve</h6>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col-2">
-                                            <img class="img-thumbnail object-fit-cover rounded-circle"
-                                                src="../images/download.jpg" alt="Mary Black" />
-                                        </div>
-                                        <div class="col-10">
-                                            <h6>Mary Black</h6>
-                                            <h6 class="text-secondary">#blacky</h6>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col-2">
-                                            <img class="img-thumbnail object-fit-cover rounded-circle"
-                                                src="../images/avataaars.png" alt="Jessica White" />
-                                        </div>
-                                        <div class="col-10">
-                                            <h6>Jessica White</h6>
-                                            <h6 class="text-secondary">#jess.wh</h6>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col-2">
-                                            <img class="img-thumbnail object-fit-cover rounded-circle"
-                                                src="../images/beccy.png" alt="Rebecca Horse" />
-                                        </div>
-                                        <div class="col-10">
-                                            <h6>Rebecca Horse</h6>
-                                            <h6 class="text-secondary">#beccy18</h6>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col-2">
-                                            <img class="img-thumbnail object-fit-cover rounded-circle"
-                                                src="../images/scarly.jpg" alt="Scarlett Johanson" />
-                                        </div>
-                                        <div class="col-10">
-                                            <h6>Scarlett Johanson</h6>
-                                            <h6 class="text-secondary">#scarly</h6>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col-2">
-                                            <img class="img-thumbnail object-fit-cover rounded-circle"
-                                                src="../images/emma.png" alt="Emma Green" />
-                                        </div>
-                                        <div class="col-10">
-                                            <h6>Emma Green</h6>
-                                            <h6 class="text-secondary">#emma.gr</h6>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col-2">
-                                            <img class="img-thumbnail object-fit-cover rounded-circle"
-                                                src="../images/david.jpg" alt="David Chopperfield" />
-                                        </div>
-                                        <div class="col-10">
-                                            <h6>David Chopperfield</h6>
-                                            <h6 class="text-secondary">#daved</h6>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col-2">
-                                            <img class="img-thumbnail object-fit-cover rounded-circle"
-                                                src="../images/peter.jpg" alt="Peter Falk" />
-                                        </div>
-                                        <div class="col-10">
-                                            <h6>Peter Falk</h6>
-                                            <h6 class="text-secondary">#columbo</h6>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col-2">
-                                            <img class="img-thumbnail object-fit-cover rounded-circle"
-                                                src="../images/john.png" alt="John Smith" />
-                                        </div>
-                                        <div class="col-10">
-                                            <h6>John Smith</h6>
-                                            <h6 class="text-secondary">#jhn.sm</h6>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div class="my-3 col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
-        <div class="card">
-            <div class="card-body">
-                <h6 class="card-subtitle mb-2 text-body-secondary">Bio</h6>
-                <p class="card-text">My name is Anne and I like to read. I like crime books and my favourite author is
-                    Agatha Christie, but I like other type books also. I have two cats Miss Marple and Poirot and I find
-                    out
-                    funny storis of them and I write these in my notebook. Maybe I will publish them one day.</p>
-            </div>
-        </div>
-    </div>
-    <div class="my-3 col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
-        <div class="card my-3">
-            <h5 class="card-header fw-normal">Anne started reading a book</h5>
-            <div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-0">
-                            <img class="w-100" src="../images/jane_eyre.png" alt="Poster of Jane Eyre">
-                        </div>
-                        <div class="col-sm-12 col-md-8 mt-2 mt-sm-0">
-                            <h5 class="card-title">Jane Eyre</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Charlotte Brontë</h6>
-                            <p class="card-text">The orphaned Jane Eyre has emerged a fiercely independent young
-                                woman.
-                                As
-                                governess
-                                at
-                                Thornfield Hall, she's found her first real home—though it stands in the shadow of
-                                the
-                                estate's
-                                master,
-                                Mr. Rochester, and its haunted halls ring with maniacal laughter. For even the
-                                grandest
-                                houses
-                                have
-                                secrets.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bi bi-hand-thumbs-up-fill card-footer text-body-secondary">
-                    5 people like this post </div>
-            </div>
-        </div>
-    </div>
-    <div class="my-3 col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
-        <div class="card my-3">
-            <h5 class="card-header fw-normal">Anna finished reading a book</h5>
-            <div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-0">
-                            <img class="w-100" src="../images/ag_the_misterious.png"
-                                alt="Poster of The Mysterious Affair at Styles">
-                        </div>
-                        <div class="col-sm-12 col-md-8 mt-2 mt-sm-0">
-                            <h5 class="card-title">The Mysterious Affair at Styles</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Agatha Christie</h6>
-                            <p class="card-text">Invalided home from the First World War, Lieutenant Hastings finds
-                                himself in a convalescent home very much to his disliking. Thankfully his old friend
-                                John Cavendish invites him to spend the rest of his sick leave at his family home. The
-                                beautiful Styles Court is home to John's step mother Mrs Inglethorpe, and her new
-                                husband Alfred. Despite the tranquil surroundings Hastings begins to realise that all is
-                                not right.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bi bi-hand-thumbs-up-fill card-footer text-body-secondary">
-                    3 people like this post </div>
-            </div>
-        </div>
-    </div>
-    <div class="my-3 col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
-        <div class="card my-3">
-            <h5 class="card-header fw-normal">Anna finished reading a book</h5>
-            <div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-0">
-                            <img class="w-100" src="../images/ag_the_murder_links.png"
-                                alt="Poster of The Murder on the Links">
-                        </div>
-                        <div class="col-sm-12 col-md-8 mt-2 mt-sm-0">
-                            <h5 class="card-title">The Murder on the Links</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Agatha Christie</h6>
-                            <p class="card-text">A crime novel featuring Belgian detective Hercule Poirot, who travels
-                                to France following an urgent plea for help from a client, but he arrives late and the
-                                client is found dead. Before Poirot can begin to assess the clues, a second corpse is
-                                found, murdered in the same way as his client.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bi bi-hand-thumbs-up-fill card-footer text-body-secondary">
-                    15 people like this post </div>
-            </div>
-        </div>
-    </div>
-    <div class="my-3 col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
-        <div class="card my-3">
-            <h5 class="card-header fw-normal">Anna wrote a review of a book</h5>
-            <div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-0">
-                            <img class="w-100" src="../images/ag_the_murder_links.png"
-                                alt="Poster of The Murder on the Links">
-                        </div>
-                        <div class="col-sm-12 col-md-8 mt-2 mt-sm-0">
-                            <h5 class="card-title">The Murder on the Links</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Agatha Christie</h6>
-                            <p class="card-text">The Murder on the Links by Agatha Christie is a classic detective novel
-                                featuring the brilliant Hercule Poirot. The plot is intricately woven, with unexpected
-                                twists and a cleverly concealed culprit, keeping readers engaged until the final reveal.
-                                Christie's skill in crafting complex characters and suspenseful scenes shines throughout
-                                the book. It's a must-read for fans of traditional whodunits and those who enjoy a
-                                satisfying, intellectually...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bi bi-hand-thumbs-up-fill card-footer text-body-secondary">
-                    7 people like this post </div>
-            </div>
-        </div>
-    </div>
+        <div id="profile-content" class="container">
 
+
+        </div>
+    </div>
+    <main class="container">
+        <div class="col-md-4 offset-md-4">
+            <div class="mt-2 card">
+                <div class="card-body">
+                    <form id="postArea">
+                        <div class="form-floating">
+                            <div class="mb-1">
+                                <label for="PostTitle" class="form-label">Tittel</label>
+                                <input class="form-control" id="PostTitle" placeholder="Leave a comment here"></input>
+                            </div>
+                            <div class="">
+                                <label for="postBody" class="form-label">Posts</label>
+                                <textarea class="form-control" id="postBody"
+                                    placeholder="Leave a comment here"></textarea>
+                            </div>
+                            <div class="mb-1">
+                                <label for="PostFile" class="form-label">File</label>
+                                <input class="form-control" type="url" id="PostFile"
+                                    placeholder="Leave a picture here"></input>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <span class="bi bi-share-fill"></span>
+                            Share
+                        </button>
+                </div>
+                </form>
+            </div>
+        </div>
+        </div>
+        <div id="post-container">
+            <script src="../api.js"></script>
+            <script src="../postcard.js"></script>
+            <script src="index.js"></script>
+            <script src="posts.js"></script>
+            <script src="../logout.js"></script>
+
+        </div>
+    </main>
 </body>
 
 </html>
