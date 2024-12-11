@@ -83,7 +83,7 @@ async function displayPosts(posts, shouldShowViewLink) {
             body: body,
             media: {
                 url: file,
-                alt: 'kitty',
+                alt: 'picture of the user\'s post',
             }
         }
         editedPost(formId, updatedData)

@@ -38,7 +38,7 @@ async function postPost(title, body, image) {
         body: body,
         media: {
             url: image,
-            alt: 'cat',
+            alt: 'Picture of the user\'s post',
         }
     }
 
