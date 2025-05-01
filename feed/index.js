@@ -25,5 +25,22 @@ async function createPost(postData) {
     }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const data = params.get('data');
+    if (data) {
+        const d = atob(data);
+        const postData = JSON.parse(d);
+        const {
+            postTitle,
+            postBody,
+            postFile
+        } = postData;
+        document.querySelector("#PostTitle").value = postTitle;
+        document.querySelector("#postBody").value = postBody;
+        document.querySelector("#PostFile").value = postFile;
+    }
+
+});
 
 fetchPosts(apiUrl)
