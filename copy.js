@@ -1,4 +1,3 @@
-// This file runs during build time and copies the required font to the dist folder
 
 const files = [
     {
@@ -18,7 +17,6 @@ const files = [
 const fs = require("fs");
 
 files.forEach(file => {
-    // Check if directory exists, if not create it
     const dir = file.to.substring(0, file.to.lastIndexOf("/"));
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });

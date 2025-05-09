@@ -1,0 +1,15 @@
+const options = {
+    headers: {
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSGFqbmFsa2Fac0YiLCJlbWFpbCI6ImhhanpzbzQxNjE4QHN0dWQubm9yb2ZmLm5vIiwiaWF0IjoxNzI3MzU4NTY1fQ.NkTBkDRoykpJEatDusuLGxiQxLTiH4yk9SQ6lfLkYRg',
+        'X-Noroff-API-Key': 'af6d4018-2bc0-4e89-9578-a836a5b98093'
+    }
+};
+
+{
+    "data": {
+        "name": "Book Social",
+            "status": "ACTIVE",
+                "key": "c3f5b8a6-3a13-441f-bf49-53bf03f73477"
+    },
+    "meta": { }
+}
